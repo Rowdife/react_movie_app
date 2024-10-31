@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-
-<body>
-</body>
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-<script>
-</script>
+<html>
+  <body>
+    <div id="root">ss</div>
+  </body>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+      "h3",
+      {
+        id: "title",
+        onMouseEnter: () => console.log("mouse enter"),
+      },
+      "Hello I'm a h3"
+    );
+    const br = React.createElement("br");
+    const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("I'm clicked"),
+        style: {
+          backgroundColor: "tomato",
+        },
+      },
+      "Click me"
+    );
+    const container = React.createElement("div", null, [h3, br, btn]);
+    ReactDOM.render(container, root);
+  </script>
 </html>
